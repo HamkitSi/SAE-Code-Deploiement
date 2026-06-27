@@ -796,19 +796,19 @@ Ce volume permet de conserver les données même si les conteneurs sont arrêté
 Lien de l’image :
 
 ```text
-https://hub.docker.com/r/VOTRE_COMPTE_DOCKERHUB/mental-health-api
+https://hub.docker.com/r/hamkitsi/mental-health-api
 ```
 
 Commande pour récupérer l’image :
 
 ```bash
-docker pull VOTRE_COMPTE_DOCKERHUB/mental-health-api
+docker pull hamkitsi/mental-health-api
 ```
 
 Commande pour lancer l’image seule :
 
 ```bash
-docker run -p 8080:8080 VOTRE_COMPTE_DOCKERHUB/mental-health-api
+docker run -p 8080:8080 hamkitsi/mental-health-api
 ```
 
 > Remarque : pour fonctionner avec PostgreSQL, il est recommandé d’utiliser `docker-compose.yml`.
