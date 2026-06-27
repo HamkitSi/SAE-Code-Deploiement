@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    container_name: mental-health-db
+    environment:
+      POSTGRES_DB: mental_health_db
+      POSTGRES_USER: mental
+      POSTGRES_PASSWORD: mental
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: mental-health-api
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/mental_health_db
+      SPRING_DATASOURCE_USERNAME: mental
+      SPRING_DATASOURCE_PASSWORD: mental
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
